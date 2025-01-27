@@ -4,6 +4,7 @@ import models
 import json
 import models
 from woocommerce import API
+from rich import print
 
 def get_first_day_of_month():
     now = datetime.now()

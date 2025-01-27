@@ -1,3 +1,5 @@
+# WooCommerce to Pydantic Example
+
 Example using
 [datamodel-code-generator](https://github.com/koxudaxi/datamodel-code-generator)
 to generate pydantic models from an [OpenAPI schema for WooCoomerce](https://github.com/gerbrand/WooCommerce-OpenAPI-Client/blob/main/src/main/resources/woocommerce-openapi-3.0.x.yml).
@@ -5,6 +7,12 @@ to generate pydantic models from an [OpenAPI schema for WooCoomerce](https://git
 These can hopefully then be used when working with the [WooCommerce
 API](https://woocommerce.github.io/woocommerce-rest-api-docs/) from python, in
 order to validate the records returned within API responses.
+
+Another key advantage of using the pydantic models is that autocomplete in your editor will
+supply all the relevant properties for each record returned by an API response
+and all the nested properties. This should make working with the responses **much** easier.
+
+## Overview of repo files
 
 - `generate.sh` command to run the code generator
 - `models.py` the resulting pydantic models

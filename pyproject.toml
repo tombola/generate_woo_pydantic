@@ -7,5 +7,6 @@ requires-python = ">=3.13"
 dependencies = [
     "datamodel-code-generator>=0.26.5",
     "pydantic>=2.10.6",
+    "rich>=13.9.4",
     "woocommerce>=3.0.0",
 ]
