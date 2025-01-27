@@ -5,7 +5,7 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 
 from pydantic import AnyUrl, BaseModel, EmailStr, Field
 
@@ -19,7 +19,7 @@ class DiscountType(Enum):
 class MetaDatum(BaseModel):
     id: Optional[int] = Field(None, description='Meta ID.')
     key: Optional[str] = Field(None, description='Meta key.')
-    value: Optional[str] = Field(None, description='Meta value.')
+    value: Optional[Union[str, Dict[str, Any]]] = Field(None, description='Meta value.')
 
 
 class ShopCoupon(BaseModel):
@@ -231,7 +231,7 @@ class Tax(BaseModel):
 class LineItem(BaseModel):
     id: Optional[int] = Field(None, description='Item ID.')
     name: Optional[str] = Field(None, description='Product name.')
-    product_id: Optional[str] = Field(None, description='Product ID.')
+    product_id: Optional[int] = Field(None, description='Product ID.')
     variation_id: Optional[int] = Field(
         None, description='Variation ID, if applicable.'
     )
@@ -504,7 +504,7 @@ class Tax1(BaseModel):
 class MetaDatum5(BaseModel):
     id: Optional[int] = Field(None, description='Meta ID.')
     key: Optional[str] = Field(None, description='Meta key.')
-    value: Optional[str] = Field(None, description='Meta value.')
+    value: Optional[Union[str, Dict[str, Any]]] = Field(None, description='Meta value.')
     display_key: Optional[str] = Field(None, description='Meta key for UI display.')
     display_value: Optional[str] = Field(None, description='Meta value for UI display.')
 
@@ -515,7 +515,7 @@ class LineItem1(BaseModel):
     parent_name: Optional[str] = Field(
         None, description='Parent product name if the product is a variation.'
     )
-    product_id: Optional[str] = Field(None, description='Product ID.')
+    product_id: Optional[int] = Field(None, description='Product ID.')
     variation_id: Optional[int] = Field(
         None, description='Variation ID, if applicable.'
     )
@@ -540,13 +540,13 @@ class LineItem1(BaseModel):
 class MetaDatum6(BaseModel):
     id: Optional[int] = Field(None, description='Meta ID.')
     key: Optional[str] = Field(None, description='Meta key.')
-    value: Optional[str] = Field(None, description='Meta value.')
+    value: Optional[Union[str, Dict[str, Any]]] = Field(None, description='Meta value.')
 
 
 class TaxLine(BaseModel):
     id: Optional[int] = Field(None, description='Item ID.')
     rate_code: Optional[str] = Field(None, description='Tax rate code.')
-    rate_id: Optional[str] = Field(None, description='Tax rate ID.')
+    rate_id: Optional[int] = Field(None, description='Tax rate ID.')
     label: Optional[str] = Field(None, description='Tax rate label.')
     compound: Optional[bool] = Field(
         None, description='Show if is a compound tax rate.'
@@ -622,7 +622,7 @@ class ShopOrder(BaseModel):
     created_via: Optional[str] = Field(
         None, description='Shows where the order was created.'
     )
-    version: Optional[int] = Field(
+    version: Optional[str] = Field(
         None, description='Version of WooCommerce which last updated the order.'
     )
     status: Optional[Status] = Field(None, description='Order status.')
