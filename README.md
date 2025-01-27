@@ -9,4 +9,5 @@ order to validate the records returned within API responses.
 - `generate.sh` command to run the code generator
 - `models.py` the resulting pydantic models
 - `pyproject.toml` / `uv.lock` environment and dependencies handled by [uv](https://docs.astral.sh/uv/)
+- `usage.py` A usage example validating orders returned from the WC API
 - `woocommerce-openapi-3.0.x.yml` the OpenAPI schema ([source](https://github.com/gerbrand/WooCommerce-OpenAPI-Client/blob/main/src/main/resources/woocommerce-openapi-3.0.x.yml))
