@@ -417,7 +417,13 @@ paths:
                         type: string
                         description: Meta key.
                       value:
-                        type: string
+                        oneOf:
+                          - type: string
+                          - type: array
+                            items:
+                              oneOf:
+                                - type: string
+                                - type: integer
                         description: Meta value.
                   description: Meta data.
       parameters:
