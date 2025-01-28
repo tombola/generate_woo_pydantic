@@ -14,8 +14,11 @@ and all the nested properties. This should make working with the responses **muc
 
 ## Overview of repo files
 
-- `generate.sh` command to run the code generator
+- `generate_models.sh` command to run the code generator
+- `generate_models.sh` python command to generate a dictionary mapping 'path' to
+  pydantic model (for use in woocommerce_pydantic package)
 - `models.py` the resulting pydantic models
 - `pyproject.toml` / `uv.lock` environment and dependencies handled by [uv](https://docs.astral.sh/uv/)
+- `response_models.py` the results from `generate_models.sh` python command
 - `usage.py` A usage example validating orders returned from the WC API
 - `woocommerce-openapi-3.0.x.yml` the OpenAPI schema ([source](https://github.com/gerbrand/WooCommerce-OpenAPI-Client/blob/main/src/main/resources/woocommerce-openapi-3.0.x.yml))
